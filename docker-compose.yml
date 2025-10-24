@@ -1,0 +1,21 @@
+version: "3.8"
+services:
+  postgres:
+    image: postgres:15
+    container_name: postgres_database
+    environment:
+      POSTGRES_PASSWORD: 474156
+      POSTGRES_DB: FerroSoft
+      POSTGRES_USER: postgres
+    ports:
+      - "5432:5432"
+    networks:
+      - spring-network
+    volumes:
+      - postgres-volume:/var/lib/postgresql/data
+
+networks:
+  spring-network:
+
+volumes:
+  postgres-volume:
